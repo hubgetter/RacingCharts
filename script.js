@@ -20,6 +20,38 @@ let barRoundness = 4;
 let borderColor = "#ffffff";
 let borderWidth = 2;
 
+// Cookie functions
+function saveSettingsToCookie() {
+    const settings = {
+        barHeight,
+        n,
+        barRoundness,
+        borderColor,
+        borderWidth
+    };
+    document.cookie = `chartSettings=${JSON.stringify(settings)}; expires=${new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toUTCString()}; path=/`;
+}
+
+function loadSettingsFromCookie() {
+    const cookie = document.cookie.split('; ').find(row => row.startsWith('chartSettings='));
+    if (cookie) {
+        const settings = JSON.parse(cookie.split('=')[1]);
+        barHeight = settings.barHeight || 50;
+        n = settings.n || 15;
+        barRoundness = settings.barRoundness || 4;
+        borderColor = settings.borderColor || "#ffffff";
+        borderWidth = settings.borderWidth || 2;
+
+        // Update UI controls
+        d3.select("#barHeight").property("value", barHeight);
+        d3.select("#numBars").property("value", n);
+        d3.select("#barRoundness").property("value", barRoundness);
+        d3.select("#borderColor").property("value", borderColor);
+        d3.select("#borderWidth").property("value", borderWidth);
+        d3.select("#borderWidthValue").text(borderWidth + "px");
+    }
+}
+
 // Define a custom color scale
 const colorScale = d3.scaleOrdinal(d3.schemeTableau10.concat(d3.schemeSet3));
 
@@ -497,27 +529,32 @@ function setupConfigurationListeners() {
     d3.select("#barHeight").on("input", function() {
         barHeight = +this.value;
         updateChartConfiguration();
+        saveSettingsToCookie();
     });
 
     d3.select("#numBars").on("input", function() {
         n = +this.value;
         updateChartConfiguration();
+        saveSettingsToCookie();
     });
 
     d3.select("#barRoundness").on("input", function() {
         barRoundness = +this.value;
         updateChartConfiguration();
+        saveSettingsToCookie();
     });
 
     d3.select("#borderColor").on("input", function() {
         borderColor = this.value;
         updateChartConfiguration();
+        saveSettingsToCookie();
     });
 
     d3.select("#borderWidth").on("input", function() {
         borderWidth = +this.value;
         d3.select("#borderWidthValue").text(borderWidth + "px");
         updateChartConfiguration();
+        saveSettingsToCookie();
     });
 }
 
@@ -528,4 +565,7 @@ function updateChartConfiguration() {
 }
 
 // Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', initVisualization);
+document.addEventListener('DOMContentLoaded', function() {
+    loadSettingsFromCookie();
+    initVisualization();
+});
