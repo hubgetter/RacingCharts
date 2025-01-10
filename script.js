@@ -26,20 +26,19 @@ async function initVisualization() {
         const response = await fetch('gdp.json');
         const jsonData = await response.json();
 
-        // Extract years and data from the JSON structure
-        const years = jsonData.years;
-        const yearData = jsonData.data;
-
+        // Get available years (years that have data)
+        const availableYears = Object.keys(jsonData.data).sort();
+        
         // Store the data in the global data variable
         data = {
-            years: years,
-            data: yearData
+            name: jsonData.name || "Total",
+            years: availableYears,
+            data: jsonData.data
         };
 
-        // Sort initial data
-        const firstYear = years[0];
-        yearData[firstYear].sort((a, b) => b.value - a.value);
-
+        // Initialize with first year
+        currentYear = availableYears[0];
+        
         // Initialize SVG
         svg = d3.select("#chart")
             .html("") // Clear loading message
@@ -64,11 +63,20 @@ async function initVisualization() {
             .style("opacity", 0.15);
 
         // Create legend
-        createLegend(yearData[firstYear]);
+        createLegend(data.data[currentYear]);
 
         // Start visualization
-        currentYear = data.years[0];
         updateChart(currentYear);
+        
+        // Update year slider with available years
+        const yearSlider = d3.select("#yearSlider")
+            .attr("min", availableYears[0])
+            .attr("max", availableYears[availableYears.length - 1])
+            .attr("value", currentYear)
+            .attr("step", 1);
+
+        // Update year display
+        d3.select("#yearDisplay").text(currentYear);
         
         setupEventListeners();
         setupConfigurationListeners();
@@ -87,23 +95,7 @@ async function initVisualization() {
     }
 }
 
-// Add getFlagEmoji function
-function getFlagEmoji(countryName) {
-    const flagMap = {
-        "United States": "🇺🇸",
-        "China": "🇨🇳",
-        "Japan": "🇯🇵",
-        "Germany": "🇩🇪",
-        "India": "🇮🇳",
-        "France": "🇫🇷",
-        "United Kingdom": "🇬🇧",
-        "Italy": "🇮🇹",
-        "Brazil": "🇧🇷",
-        "Russia": "🇷🇺",
-        "Indonesia": "🇮🇩"
-    };
-    return flagMap[countryName] || "🏳️";
-}
+
 
 // Modify yearSlider setup in setupEventListeners
 function setupEventListeners() {
@@ -111,9 +103,6 @@ function setupEventListeners() {
     
     const yearSlider = d3.select("#yearSlider");
     yearSlider
-        .attr("min", data.years[0])
-        .attr("max", data.years[data.years.length - 1])
-        .attr("value", currentYear)
         .on("input", function() {
             currentYear = +this.value;
             d3.select("#yearDisplay").text(currentYear);
@@ -158,6 +147,55 @@ function updateChart(currentYear) {
 
     // Take top n items
     currentData = currentData.slice(0, n);
+
+    // Calculate total
+    const total = currentData.reduce((sum, d) => sum + d.value, 0);
+
+    // Update or create stats text
+    const statsGroup = svg.selectAll(".stats-group").data([0]);
+    const statsEnter = statsGroup.enter()
+        .append("g")
+        .attr("class", "stats-group")
+        .attr("transform", `translate(${width - 400}, ${height - 200})`);
+
+    // Add total value
+    statsEnter.append("text")
+        .attr("class", "total-value")
+        .attr("y", 0)
+        .attr("text-anchor", "middle")
+        .style("fill", "#888")
+        .style("font-size", "48px");
+
+    // Add total label
+    statsEnter.append("text")
+        .attr("class", "total-label")
+        .attr("y", -40)
+        .attr("text-anchor", "middle")
+        .style("fill", "#666")
+        .style("font-size", "24px")
+        .text(`Total ${data.name}`);
+
+    // Add year display
+    statsEnter.append("text")
+        .attr("class", "year-display")
+        .attr("y", 140)
+        .attr("text-anchor", "middle")
+        .style("fill", "rgba(255, 255, 255, 0.15)")
+        .style("font-size", "160px")
+        .style("font-weight", "bold")
+        .style("font-family", "Arial");
+
+    // Update total value
+    svg.select(".total-value")
+        .text(formatNumber(total));
+
+    // Update total label if needed
+    svg.select(".total-label")
+        .text(`Total ${data.name}`);
+
+    // Update year display
+    svg.select(".year-display")
+        .text(currentYear);
 
     // Keep track of previous positions
     const previousData = svg.selectAll("rect").data();
