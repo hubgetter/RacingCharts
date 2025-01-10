@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIP-Vergleich 2000-2024</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            color: white;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .controls {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #playButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        #playButton:hover {
+            background-color: #45a049;
+        }
+
+        #yearSlider {
+            width: 300px;
+        }
+
+        .bar {
+            transition: none;
+        }
+
+        .value-label, .flag-label {
+            font-smooth: always;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .year-label {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .tooltip {
+            position: absolute;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            border-radius: 5px;
+            pointer-events: none;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 20px;
+            }
+            
+            #yearSlider {
+                width: 200px;
+            }
+            
+            .controls {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bruttoinlandsprodukt im Ländervergleich 2000-2024</h1>
+        <div class="controls">
+            <button id="playButton">Play</button>
+            <input type="range" id="yearSlider" min="2000" max="2024" value="2000" step="1">
+            <span id="yearDisplay">2000</span>
+        </div>
+        <div id="chart"></div>
+    </div>
+
+    <script>
+        // Hier fügen wir die Daten direkt ein
+        const data = {
+            "years": ["2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
+            "data": {
+                "2000": [
+                    { "country": "USA", "value": 10252, "color": "#ff0000", "flag": "🇺🇸" },
+                    { "country": "Japan", "value": 4887, "color": "#0000ff", "flag": "🇯🇵" },
+                    { "country": "Germany", "value": 1886, "color": "#ffaa00", "flag": "🇩🇪" },
+                    { "country": "UK", "value": 1657, "color": "#800080", "flag": "🇬🇧" },
+                    { "country": "France", "value": 1362, "color": "#00ff00", "flag": "🇫🇷" },
+                    { "country": "China", "value": 1211, "color": "#ff00ff", "flag": "🇨🇳" },
+                    { "country": "Italy", "value": 1104, "color": "#00ffff", "flag": "🇮🇹" },
+                    { "country": "Canada", "value": 742, "color": "#ffa500", "flag": "🇨🇦" }
+                ],
+                "2001": [
+                    { "country": "USA", "value": 10582, "color": "#ff0000", "flag": "🇺🇸" },
+                    { "country": "Japan", "value": 4303, "color": "#0000ff", "flag": "🇯🇵" },
+                    { "country": "Germany", "value": 1890, "color": "#ffaa00", "flag": "🇩🇪" },
+                    { "country": "UK", "value": 1640, "color": "#800080", "flag": "🇬🇧" },
+                    { "country": "France", "value": 1368, "color": "#00ff00", "flag": "🇫🇷" },
+                    { "country": "China", "value": 1339, "color": "#ff00ff", "flag": "🇨🇳" },
+                    { "country": "Italy", "value": 1117, "color": "#00ffff", "flag": "🇮🇹" },
+                    { "country": "Canada", "value": 736, "color": "#ffa500", "flag": "🇨🇦" }
+                ]
+                // Fügen Sie hier die restlichen Jahre ein...
+            }
+        };
+
+        const width = Math.min(1200, window.innerWidth - 40);
+        const height = Math.min(800, window.innerHeight - 200);
+        const margin = { top: 50, right: 200, bottom: 50, left: 200 };
+
+        const svg = d3.select("#chart")
+            .append("svg")
+            .attr("width", width)
+            .attr("height", height);
+
+        const tooltip = d3.select("body")
+            .append("div")
+            .attr("class", "tooltip")
+            .style("opacity", 0);
+
+        const formatNumber = d3.format(",.0f");
+        let currentYear = 2000;
+        let isPlaying = false;
+        let animationFrame;
+
+        function updateChart(year) {
+            const currentData = data.data[year].sort((a, b) => b.value - a.value);
+
+            const x = d3.scaleLinear()
+                .domain([0, d3.max(currentData, d => d.value)])
+                .range([0, width - margin.left - margin.right]);
+
+            const y = d3.scaleBand()
+                .domain(currentData.map(d => d.country))
+                .range([margin.top, height - margin.bottom])
+                .padding(0.2);
+
+            // Balken aktualisieren
+            const bars = svg.selectAll(".bar")
+                .data(currentData, d => d.country);
+
+            bars.enter()
+                .append("rect")
+                .attr("class", "bar")
+                .attr("rx", 6)
+                .attr("ry", 6)
+                .attr("x", margin.left)
+                .merge(bars)
+                .transition()
+                .duration(500)
+                .attr("y", d => y(d.country))
+                .attr("width", d => x(d.value))
+                .attr("height", y.bandwidth())
+                .attr("fill", d => d.color);
+
+            // Flaggen und Ländernamen
+            const flagLabels = svg.selectAll(".flag-label")
+                .data(currentData, d => d.country);
+
+            flagLabels.enter()
+                .append("text")
+                .attr("class", "flag-label")
+                .merge(flagLabels)
+                .transition()
+                .duration(500)
+                .attr("x", margin.left - 10)
+                .attr("y", d => y(d.country) + y.bandwidth() / 2)
+                .attr("dy", "0.35em")
+                .attr("text-anchor", "end")
+                .attr("fill", "white")
+                .text(d => `${d.flag} ${d.country}`);
+
+            // Werte
+            const valueLabels = svg.selectAll(".value-label")
+                .data(currentData, d => d.country);
+
+            valueLabels.enter()
+                .append("text")
+                .attr("class", "value-label")
+                .merge(valueLabels)
+                .transition()
+                .duration(500)
+                .attr("x", d => margin.left + x(d.value) + 10)
+                .attr("y", d => y(d.country) + y.bandwidth() / 2)
+                .attr("dy", "0.35em")
+                .attr("fill", "white")
+                .text(d => `$${formatNumber(d.value)} Mrd.`);
+
+            // Jahreszahl aktualisieren
+            d3.select("#yearDisplay").text(year);
+            d3.select("#yearSlider").property("value", year);
+        }
+
+        function play() {
+            if (isPlaying) {
+                isPlaying = false;
+                d3.select("#playButton").text("Play");
+                clearTimeout(animationFrame);
+            } else {
+                isPlaying = true;
+                d3.select("#playButton").text("Pause");
+                animate();
+            }
+        }
+
+        function animate() {
+            if (isPlaying) {
+                currentYear++;
+                if (currentYear > 2024) {
+                    currentYear = 2000;
+                }
+                updateChart(currentYear);
+                animationFrame = setTimeout(animate, 1000);
+            }
+        }
+
+        // Event Listener
+        d3.select("#playButton").on("click", play);
+        
+        d3.select("#yearSlider").on("input", function() {
+            currentYear = +this.value;
+            updateChart(currentYear);
+        });
+
+        // Responsive Design
+        window.addEventListener('resize', () => {
+            const newWidth = Math.min(1200, window.innerWidth - 40);
+            const newHeight = Math.min(800, window.innerHeight - 200);
+            
+            svg.attr("width", newWidth)
+               .attr("height", newHeight);
+            
+            updateChart(currentYear);
+        });
+
+        // Initial chart
+        updateChart(currentYear);
+    </script>
+</body>
+</html>

@@ -1,0 +1,263 @@
+{
+    "years": ["2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
+    "data": {
+        "2000": [
+            { "Y_Parameter": "China", "value": 1211, "color": "#4CAF50", "flag": "🇨🇳" },
+            { "Y_Parameter": "India", "value": 1057, "color": "#FF9800", "flag": "🇮🇳" },
+            { "Y_Parameter": "USA", "value": 282, "color": "#2196F3", "flag": "🇺🇸" },
+            { "Y_Parameter": "Indonesia", "value": 214, "color": "#f44336", "flag": "🇮🇩" },
+            { "Y_Parameter": "Brazil", "value": 175, "color": "#9C27B0", "flag": "🇧🇷" },
+            { "Y_Parameter": "Pakistan", "value": 154, "color": "#607D8B", "flag": "🇵🇰" },
+            { "Y_Parameter": "Nigeria", "value": 122, "color": "#795548", "flag": "🇳🇬" },
+            { "Y_Parameter": "Bangladesh", "value": 129, "color": "#E91E63", "flag": "🇧🇩" },
+            { "Y_Parameter": "Russia", "value": 146, "color": "#673AB7", "flag": "🇷🇺" },
+            { "Y_Parameter": "Mexico", "value": 101, "color": "#009688", "flag": "🇲🇽" }
+        ],
+        "2001": [
+            { "Y_Parameter": "USA", "value": 10582, "color": "#ff0000", "flag": "🇺🇸" },
+            { "Y_Parameter": "Japan", "value": 4303, "color": "#0000ff", "flag": "🇯🇵" },
+            { "Y_Parameter": "Germany", "value": 1890, "color": "#ffaa00", "flag": "🇩🇪" },
+            { "Y_Parameter": "UK", "value": 1640, "color": "#800080", "flag": "🇬🇧" },
+            { "Y_Parameter": "France", "value": 1368, "color": "#00ff00", "flag": "🇫🇷" },
+            { "Y_Parameter": "China", "value": 1339, "color": "#ff00ff", "flag": "🇨🇳" },
+            { "Y_Parameter": "Italy", "value": 1117, "color": "#00ffff", "flag": "🇮🇹" },
+            { "Y_Parameter": "Canada", "value": 736, "color": "#ffa500", "flag": "🇨🇦" }
+        ],
+        "2002": [
+            { "Y_Parameter": "USA", "value": 10936, "color": "#ff0000", "flag": "🇺🇸" },
+            { "Y_Parameter": "Japan", "value": 4115, "color": "#0000ff", "flag": "🇯🇵" },
+            { "Y_Parameter": "Germany", "value": 2007, "color": "#ffaa00", "flag": "🇩🇪" },
+            { "Y_Parameter": "UK", "value": 1784, "color": "#800080", "flag": "🇬🇧" },
+            { "Y_Parameter": "France", "value": 1494, "color": "#00ff00", "flag": "🇫🇷" },
+            { "Y_Parameter": "China", "value": 1471, "color": "#ff00ff", "flag": "🇨🇳" },
+            { "Y_Parameter": "Italy", "value": 1225, "color": "#00ffff", "flag": "🇮🇹" },
+            { "Y_Parameter": "Canada", "value": 757, "color": "#ffa500", "flag": "🇨🇦" }
+        ],
+        "2003": [
+            { "Y_Parameter": "USA", "value": 11458, "color": "#ff0000", "flag": "🇺🇸" },
+            { "Y_Parameter": "Japan", "value": 4445, "color": "#0000ff", "flag": "🇯🇵" },
+            { "Y_Parameter": "Germany", "value": 2424, "color": "#ffaa00", "flag": "🇩🇪" },
+            { "Y_Parameter": "UK", "value": 2038, "color": "#800080", "flag": "🇬🇧" },
+            { "Y_Parameter": "France", "value": 1828, "color": "#00ff00", "flag": "🇫🇷" },
+            { "Y_Parameter": "China", "value": 1660, "color": "#ff00ff", "flag": "🇨🇳" },
+            { "Y_Parameter": "Italy", "value": 1510, "color": "#00ffff", "flag": "🇮🇹" },
+            { "Y_Parameter": "Canada", "value": 892, "color": "#ffa500", "flag": "🇨🇦" }
+        ],
+        "2004": [
+            { "Y_Parameter": "USA", "value": 12214, "color": "#ff0000", "flag": "🇺🇸" },
+            { "Y_Parameter": "Japan", "value": 4815, "color": "#0000ff", "flag": "🇯🇵" },
+            { "Y_Parameter": "Germany", "value": 2729, "color": "#ffaa00", "flag": "🇩🇪" },
+            { "Y_Parameter": "UK", "value": 2399, "color": "#800080", "flag": "🇬🇧" },
+            { "Y_Parameter": "France", "value": 2061, "color": "#00ff00", "flag": "🇫🇷" },
+            { "Y_Parameter": "China", "value": 1955, "color": "#ff00ff", "flag": "🇨🇳" },
+            { "Y_Parameter": "Italy", "value": 1730, "color": "#00ffff", "flag": "🇮🇹" },
+            { "Y_Parameter": "Canada", "value": 1023, "color": "#ffa500", "flag": "🇨🇦" }
+        ],
+        "2005": [
+            { "Y_Parameter": "USA", "value": 13037, "color": "#ff0000", "flag": "🇺🇸" },
+            { "Y_Parameter": "Japan", "value": 4755, "color": "#0000ff", "flag": "🇯🇵" },
+            { "Y_Parameter": "Germany", "value": 2771, "color": "#ffaa00", "flag": "🇩🇪" },
+            { "Y_Parameter": "UK", "value": 2412, "color": "#800080", "flag": "🇬🇧" },
+            { "Y_Parameter": "China", "value": 2286, "color": "#ff00ff", "flag": "🇨🇳" },
+            { "Y_Parameter": "France", "value": 2138, "color": "#00ff00", "flag": "🇫🇷" },
+            { "Y_Parameter": "Italy", "value": 1780, "color": "#00ffff", "flag": "🇮🇹" },
+            { "Y_Parameter": "Canada", "value": 1169, "color": "#ffa500", "flag": "🇨🇦" }
+        ],
+        "2006": [
+            { "Y_Parameter": "USA", "value": 13815, "color": "#ff0000", "flag": "🇺🇸" },
+            { "Y_Parameter": "Japan", "value": 4530, "color": "#0000ff", "flag": "🇯🇵" },
+            { "Y_Parameter": "Germany", "value": 2905, "color": "#ffaa00", "flag": "🇩🇪" },
+            { "Y_Parameter": "China", "value": 2752, "color": "#ff00ff", "flag": "🇨🇳" },
+            { "Y_Parameter": "UK", "value": 2590, "color": "#800080", "flag": "🇬🇧" },
+            { "Y_Parameter": "France", "value": 2260, "color": "#00ff00", "flag": "🇫🇷" },
+            { "Y_Parameter": "Italy", "value": 1865, "color": "#00ffff", "flag": "🇮🇹" },
+            { "Y_Parameter": "Canada", "value": 1315, "color": "#ffa500", "flag": "🇨🇦" }
+        ],
+        "2007": [
+            { "Y_Parameter": "USA", "value": 14452, "color": "#ff0000", "flag": "🇺🇸" },
+            { "Y_Parameter": "Japan", "value": 4515, "color": "#0000ff", "flag": "🇯🇵" },
+            { "Y_Parameter": "China", "value": 3552, "color": "#ff00ff", "flag": "🇨🇳" },
+            { "Y_Parameter": "Germany", "value": 3328, "color": "#ffaa00", "flag": "🇩🇪" },
+            { "Y_Parameter": "UK", "value": 2990, "color": "#800080", "flag": "🇬🇧" },
+            { "Y_Parameter": "France", "value": 2587, "color": "#00ff00", "flag": "🇫🇷" },
+            { "Y_Parameter": "Italy", "value": 2119, "color": "#00ffff", "flag": "🇮🇹" },
+            { "Y_Parameter": "Canada", "value": 1465, "color": "#ffa500", "flag": "🇨🇦" }
+        ],
+        "2008": [
+            { "Y_Parameter": "USA", "value": 14713, "color": "#ff0000", "flag": "🇺🇸" },
+            { "Y_Parameter": "Japan", "value": 5038, "color": "#0000ff", "flag": "🇯🇵" },
+            { "Y_Parameter": "China", "value": 4598, "color": "#ff00ff", "flag": "🇨🇳" },
+            { "Y_Parameter": "Germany", "value": 3640, "color": "#ffaa00", "flag": "🇩🇪" },
+            { "Y_Parameter": "France", "value": 2923, "color": "#00ff00", "flag": "🇫🇷" },
+            { "Y_Parameter": "UK", "value": 2793, "color": "#800080", "flag": "🇬🇧" },
+            { "Y_Parameter": "Italy", "value": 2399, "color": "#00ffff", "flag": "🇮🇹" },
+            { "Y_Parameter": "Canada", "value": 1549, "color": "#ffa500", "flag": "🇨🇦" }
+        ],
+        "2009": [
+            { "Y_Parameter": "USA", "value": 14449, "color": "#ff0000", "flag": "🇺🇸" },
+            { "Y_Parameter": "Japan", "value": 5231, "color": "#0000ff", "flag": "🇯🇵" },
+            { "Y_Parameter": "China", "value": 5110, "color": "#ff00ff", "flag": "🇨🇳" },
+            { "Y_Parameter": "Germany", "value": 3307, "color": "#ffaa00", "flag": "🇩🇪" },
+            { "Y_Parameter": "France", "value": 2690, "color": "#00ff00", "flag": "🇫🇷" },
+            { "Y_Parameter": "UK", "value": 2383, "color": "#800080", "flag": "🇬🇧" },
+            { "Y_Parameter": "Italy", "value": 2186, "color": "#00ffff", "flag": "🇮🇹" },
+            { "Y_Parameter": "Canada", "value": 1371, "color": "#ffa500", "flag": "🇨🇦" }
+        ],
+        "2010": [
+            { "Y_Parameter": "China", "value": 1330, "color": "#4CAF50", "flag": "🇨🇳" },
+            { "Y_Parameter": "India", "value": 1234, "color": "#FF9800", "flag": "🇮🇳" },
+            { "Y_Parameter": "USA", "value": 309, "color": "#2196F3", "flag": "🇺🇸" },
+            { "Y_Parameter": "Indonesia", "value": 242, "color": "#f44336", "flag": "🇮🇩" },
+            { "Y_Parameter": "Brazil", "value": 196, "color": "#9C27B0", "flag": "🇧🇷" },
+            { "Y_Parameter": "Pakistan", "value": 170, "color": "#607D8B", "flag": "🇵🇰" },
+            { "Y_Parameter": "Nigeria", "value": 159, "color": "#795548", "flag": "🇳🇬" },
+            { "Y_Parameter": "Bangladesh", "value": 147, "color": "#E91E63", "flag": "🇧🇩" },
+            { "Y_Parameter": "Russia", "value": 143, "color": "#673AB7", "flag": "🇷🇺" },
+            { "Y_Parameter": "Mexico", "value": 114, "color": "#009688", "flag": "🇲🇽" }
+        ],
+        "2011": [
+            { "Y_Parameter": "USA", "value": 15543, "color": "#ff0000", "flag": "🇺🇸" },
+            { "Y_Parameter": "China", "value": 7552, "color": "#ff00ff", "flag": "🇨🇳" },
+            { "Y_Parameter": "Japan", "value": 6157, "color": "#0000ff", "flag": "🇯🇵" },
+            { "Y_Parameter": "Germany", "value": 3744, "color": "#ffaa00", "flag": "🇩🇪" },
+            { "Y_Parameter": "France", "value": 2862, "color": "#00ff00", "flag": "🇫🇷" },
+            { "Y_Parameter": "UK", "value": 2620, "color": "#800080", "flag": "🇬🇧" },
+            { "Y_Parameter": "Italy", "value": 2278, "color": "#00ffff", "flag": "🇮🇹" },
+            { "Y_Parameter": "Canada", "value": 1789, "color": "#ffa500", "flag": "🇨🇦" }
+        ],
+        "2012": [
+            { "Y_Parameter": "USA", "value": 16197, "color": "#ff0000", "flag": "🇺🇸" },
+            { "Y_Parameter": "China", "value": 8532, "color": "#ff00ff", "flag": "🇨🇳" },
+            { "Y_Parameter": "Japan", "value": 6203, "color": "#0000ff", "flag": "🇯🇵" },
+            { "Y_Parameter": "Germany", "value": 3534, "color": "#ffaa00", "flag": "🇩🇪" },
+            { "Y_Parameter": "France", "value": 2681, "color": "#00ff00", "flag": "🇫🇷" },
+            { "Y_Parameter": "UK", "value": 2662, "color": "#800080", "flag": "🇬🇧" },
+            { "Y_Parameter": "Italy", "value": 2075, "color": "#00ffff", "flag": "🇮🇹" },
+            { "Y_Parameter": "Canada", "value": 1833, "color": "#ffa500", "flag": "🇨🇦" }
+        ],
+        "2013": [
+            { "Y_Parameter": "USA", "value": 16785, "color": "#ff0000", "flag": "🇺🇸" },
+            { "Y_Parameter": "China", "value": 9570, "color": "#ff00ff", "flag": "🇨🇳" },
+            { "Y_Parameter": "Japan", "value": 5156, "color": "#0000ff", "flag": "🇯🇵" },
+            { "Y_Parameter": "Germany", "value": 3733, "color": "#ffaa00", "flag": "🇩🇪" },
+            { "Y_Parameter": "UK", "value": 2740, "color": "#800080", "flag": "🇬🇧" },
+            { "Y_Parameter": "France", "value": 2809, "color": "#00ff00", "flag": "🇫🇷" },
+            { "Y_Parameter": "Italy", "value": 2130, "color": "#00ffff", "flag": "🇮🇹" },
+            { "Y_Parameter": "Canada", "value": 1843, "color": "#ffa500", "flag": "🇨🇦" }
+        ],
+        "2014": [
+            { "Y_Parameter": "USA", "value": 17527, "color": "#ff0000", "flag": "🇺🇸" },
+            { "Y_Parameter": "China", "value": 10476, "color": "#ff00ff", "flag": "🇨🇳" },
+            { "Y_Parameter": "Japan", "value": 4850, "color": "#0000ff", "flag": "🇯🇵" },
+            { "Y_Parameter": "Germany", "value": 3890, "color": "#ffaa00", "flag": "🇩🇪" },
+            { "Y_Parameter": "UK", "value": 3024, "color": "#800080", "flag": "🇬🇧" },
+            { "Y_Parameter": "France", "value": 2849, "color": "#00ff00", "flag": "🇫🇷" },
+            { "Y_Parameter": "Italy", "value": 2152, "color": "#00ffff", "flag": "🇮🇹" },
+            { "Y_Parameter": "Canada", "value": 1799, "color": "#ffa500", "flag": "🇨🇦" }
+        ],
+        "2015": [
+            { "Y_Parameter": "USA", "value": 18238, "color": "#ff0000", "flag": "🇺🇸" },
+            { "Y_Parameter": "China", "value": 11062, "color": "#ff00ff", "flag": "🇨🇳" },
+            { "Y_Parameter": "Japan", "value": 4395, "color": "#0000ff", "flag": "🇯🇵" },
+            { "Y_Parameter": "Germany", "value": 3377, "color": "#ffaa00", "flag": "🇩🇪" },
+            { "Y_Parameter": "UK", "value": 2886, "color": "#800080", "flag": "🇬🇧" },
+            { "Y_Parameter": "France", "value": 2434, "color": "#00ff00", "flag": "🇫🇷" },
+            { "Y_Parameter": "Italy", "value": 1833, "color": "#00ffff", "flag": "🇮🇹" },
+            { "Y_Parameter": "Canada", "value": 1556, "color": "#ffa500", "flag": "🇨🇦" }
+        ],
+        "2016": [
+            { "Y_Parameter": "USA", "value": 18745, "color": "#ff0000", "flag": "🇺🇸" },
+            { "Y_Parameter": "China", "value": 11233, "color": "#ff00ff", "flag": "🇨🇳" },
+            { "Y_Parameter": "Japan", "value": 4949, "color": "#0000ff", "flag": "🇯🇵" },
+            { "Y_Parameter": "Germany", "value": 3479, "color": "#ffaa00", "flag": "🇩🇪" },
+            { "Y_Parameter": "UK", "value": 2669, "color": "#800080", "flag": "🇬🇧" },
+            { "Y_Parameter": "France", "value": 2472, "color": "#00ff00", "flag": "🇫🇷" },
+            { "Y_Parameter": "Italy", "value": 1869, "color": "#00ffff", "flag": "🇮🇹" },
+            { "Y_Parameter": "Canada", "value": 1527, "color": "#ffa500", "flag": "🇨🇦" }
+        ],
+        "2017": [
+            { "Y_Parameter": "USA", "value": 19543, "color": "#ff0000", "flag": "🇺🇸" },
+            { "Y_Parameter": "China", "value": 12310, "color": "#ff00ff", "flag": "🇨🇳" },
+            { "Y_Parameter": "Japan", "value": 4872, "color": "#0000ff", "flag": "🇯🇵" },
+            { "Y_Parameter": "Germany", "value": 3677, "color": "#ffaa00", "flag": "🇩🇪" },
+            { "Y_Parameter": "UK", "value": 2640, "color": "#800080", "flag": "🇬🇧" },
+            { "Y_Parameter": "France", "value": 2582, "color": "#00ff00", "flag": "🇫🇷" },
+            { "Y_Parameter": "Italy", "value": 1950, "color": "#00ffff", "flag": "🇮🇹" },
+            { "Y_Parameter": "Canada", "value": 1647, "color": "#ffa500", "flag": "🇨🇦" }
+        ],
+        "2018": [
+            { "Y_Parameter": "USA", "value": 20611, "color": "#ff0000", "flag": "🇺🇸" },
+            { "Y_Parameter": "China", "value": 13895, "color": "#ff00ff", "flag": "🇨🇳" },
+            { "Y_Parameter": "Japan", "value": 4955, "color": "#0000ff", "flag": "🇯🇵" },
+            { "Y_Parameter": "Germany", "value": 3975, "color": "#ffaa00", "flag": "🇩🇪" },
+            { "Y_Parameter": "UK", "value": 2828, "color": "#800080", "flag": "🇬🇧" },
+            { "Y_Parameter": "France", "value": 2780, "color": "#00ff00", "flag": "🇫🇷" },
+            { "Y_Parameter": "Italy", "value": 2084, "color": "#00ffff", "flag": "🇮🇹" },
+            { "Y_Parameter": "Canada", "value": 1725, "color": "#ffa500", "flag": "🇨🇦" }
+        ],
+        "2019": [
+            { "Y_Parameter": "USA", "value": 21433, "color": "#ff0000", "flag": "🇺🇸" },
+            { "Y_Parameter": "China", "value": 14343, "color": "#ff00ff", "flag": "🇨🇳" },
+            { "Y_Parameter": "Japan", "value": 5082, "color": "#0000ff", "flag": "🇯🇵" },
+            { "Y_Parameter": "Germany", "value": 3861, "color": "#ffaa00", "flag": "🇩🇪" },
+            { "Y_Parameter": "UK", "value": 2827, "color": "#800080", "flag": "🇬🇧" },
+            { "Y_Parameter": "France", "value": 2715, "color": "#00ff00", "flag": "🇫🇷" },
+            { "Y_Parameter": "Italy", "value": 2001, "color": "#00ffff", "flag": "🇮🇹" },
+            { "Y_Parameter": "Canada", "value": 1742, "color": "#ffa500", "flag": "🇨🇦" }
+        ],
+        "2020": [
+            { "Y_Parameter": "China", "value": 1402, "color": "#4CAF50", "flag": "🇨🇳" },
+            { "Y_Parameter": "India", "value": 1380, "color": "#FF9800", "flag": "🇮🇳" },
+            { "Y_Parameter": "USA", "value": 331, "color": "#2196F3", "flag": "🇺🇸" },
+            { "Y_Parameter": "Indonesia", "value": 271, "color": "#f44336", "flag": "🇮🇩" },
+            { "Y_Parameter": "Pakistan", "value": 221, "color": "#607D8B", "flag": "🇵🇰" },
+            { "Y_Parameter": "Brazil", "value": 213, "color": "#9C27B0", "flag": "🇧🇷" },
+            { "Y_Parameter": "Nigeria", "value": 206, "color": "#795548", "flag": "🇳🇬" },
+            { "Y_Parameter": "Bangladesh", "value": 165, "color": "#E91E63", "flag": "🇧🇩" },
+            { "Y_Parameter": "Russia", "value": 146, "color": "#673AB7", "flag": "🇷🇺" },
+            { "Y_Parameter": "Mexico", "value": 129, "color": "#009688", "flag": "🇲🇽" }
+        ],
+        "2021": [
+            { "Y_Parameter": "USA", "value": 23315, "color": "#ff0000", "flag": "🇺🇸" },
+            { "Y_Parameter": "China", "value": 17734, "color": "#ff00ff", "flag": "🇨🇳" },
+            { "Y_Parameter": "Japan", "value": 4937, "color": "#0000ff", "flag": "🇯🇵" },
+            { "Y_Parameter": "Germany", "value": 4223, "color": "#ffaa00", "flag": "🇩🇪" },
+            { "Y_Parameter": "UK", "value": 3187, "color": "#800080", "flag": "🇬🇧" },
+            { "Y_Parameter": "France", "value": 2957, "color": "#00ff00", "flag": "🇫🇷" },
+            { "Y_Parameter": "Italy", "value": 2099, "color": "#00ffff", "flag": "🇮🇹" },
+            { "Y_Parameter": "Canada", "value": 1988, "color": "#ffa500", "flag": "🇨🇦" }
+        ],
+        "2022": [
+            { "Y_Parameter": "USA", "value": 25035, "color": "#ff0000", "flag": "🇺🇸" },
+            { "Y_Parameter": "China", "value": 18075, "color": "#ff00ff", "flag": "🇨🇳" },
+            { "Y_Parameter": "Japan", "value": 4231, "color": "#0000ff", "flag": "🇯🇵" },
+            { "Y_Parameter": "Germany", "value": 4072, "color": "#ffaa00", "flag": "🇩🇪" },
+            { "Y_Parameter": "UK", "value": 3198, "color": "#800080", "flag": "🇬🇧" },
+            { "Y_Parameter": "France", "value": 2782, "color": "#00ff00", "flag": "🇫🇷" },
+            { "Y_Parameter": "Italy", "value": 2010, "color": "#00ffff", "flag": "🇮🇹" },
+            { "Y_Parameter": "Canada", "value": 2200, "color": "#ffa500", "flag": "🇨🇦" }
+        ],
+        "2023": [
+            { "Y_Parameter": "USA", "value": 26854, "color": "#ff0000", "flag": "🇺🇸" },
+            { "Y_Parameter": "China", "value": 19374, "color": "#ff00ff", "flag": "🇨🇳" },
+            { "Y_Parameter": "Japan", "value": 4231, "color": "#0000ff", "flag": "🇯🇵" },
+            { "Y_Parameter": "Germany", "value": 4430, "color": "#ffaa00", "flag": "🇩🇪" },
+            { "Y_Parameter": "UK", "value": 3332, "color": "#800080", "flag": "🇬🇧" },
+            { "Y_Parameter": "France", "value": 3049, "color": "#00ff00", "flag": "🇫🇷" },
+            { "Y_Parameter": "Italy", "value": 2186, "color": "#00ffff", "flag": "🇮🇹" },
+            { "Y_Parameter": "Canada", "value": 2378, "color": "#ffa500", "flag": "🇨🇦" }
+        ],
+        "2024": [
+            { "Y_Parameter": "China", "value": 1425, "color": "#4CAF50", "flag": "🇨🇳" },
+            { "Y_Parameter": "India", "value": 1429, "color": "#FF9800", "flag": "🇮🇳" },
+            { "Y_Parameter": "USA", "value": 340, "color": "#2196F3", "flag": "🇺🇸" },
+            { "Y_Parameter": "Indonesia", "value": 280, "color": "#f44336", "flag": "🇮🇩" },
+            { "Y_Parameter": "Pakistan", "value": 241, "color": "#607D8B", "flag": "🇵🇰" },
+            { "Y_Parameter": "Nigeria", "value": 223, "color": "#795548", "flag": "🇳🇬" },
+            { "Y_Parameter": "Brazil", "value": 215, "color": "#9C27B0", "flag": "🇧🇷" },
+            { "Y_Parameter": "Bangladesh", "value": 172, "color": "#E91E63", "flag": "🇧🇩" },
+            { "Y_Parameter": "Russia", "value": 144, "color": "#673AB7", "flag": "🇷🇺" },
+            { "Y_Parameter": "Mexico", "value": 132, "color": "#009688", "flag": "🇲🇽" }
+        ]
+    }
+}
