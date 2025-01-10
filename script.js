@@ -13,9 +13,12 @@ const width = Math.min(1400, window.innerWidth - 40);
 const height = Math.min(800, window.innerHeight - 200);
 const margin = { top: 50, right: 200, bottom: 50, left: 200 };
 const formatNumber = d3.format(",.0f");
-let barHeight = 35;
+let barHeight = 50;
 let duration = 600;
-let n = 10;
+let n = 15;
+let barRoundness = 4;
+let borderColor = "#ffffff";
+let borderWidth = 2;
 
 // Define a custom color scale
 const colorScale = d3.scaleOrdinal(d3.schemeTableau10.concat(d3.schemeSet3));
@@ -274,9 +277,12 @@ function updateChart(currentYear) {
             .append("rect")
             .attr("height", y.bandwidth())
             .attr("x", margin.left)
-            .attr("fill", d => d.color)
-            .attr("rx", 4)
-            .attr("ry", 4)
+            .style("fill", d => d.color)
+            .style("opacity", 1)
+            .style("stroke", borderColor)
+            .style("stroke-width", borderWidth + "px")
+            .attr("rx", barRoundness)
+            .attr("ry", barRoundness)
             .attr("y", height) // Start from bottom
             .attr("width", 0);
 
@@ -286,7 +292,12 @@ function updateChart(currentYear) {
             .duration(duration / 2)
             .attr("y", d => y(d.Y_Parameter))
             .attr("width", d => x(d.value) - margin.left)
-            .attr("height", y.bandwidth());
+            .attr("height", y.bandwidth())
+            .attr("rx", barRoundness)
+            .attr("ry", barRoundness)
+            .style("opacity", 1)
+            .style("stroke", borderColor)
+            .style("stroke-width", borderWidth + "px");
 
         // Update labels
         const labels = svg.selectAll(".label-group")
@@ -483,9 +494,31 @@ function stopAnimation() {
 }
 
 function setupConfigurationListeners() {
-    document.getElementById('barColor').addEventListener('input', updateChartConfiguration);
-    document.getElementById('barHeight').addEventListener('input', updateChartConfiguration);
-    document.getElementById('numBars').addEventListener('input', updateChartConfiguration);
+    d3.select("#barHeight").on("input", function() {
+        barHeight = +this.value;
+        updateChartConfiguration();
+    });
+
+    d3.select("#numBars").on("input", function() {
+        n = +this.value;
+        updateChartConfiguration();
+    });
+
+    d3.select("#barRoundness").on("input", function() {
+        barRoundness = +this.value;
+        updateChartConfiguration();
+    });
+
+    d3.select("#borderColor").on("input", function() {
+        borderColor = this.value;
+        updateChartConfiguration();
+    });
+
+    d3.select("#borderWidth").on("input", function() {
+        borderWidth = +this.value;
+        d3.select("#borderWidthValue").text(borderWidth + "px");
+        updateChartConfiguration();
+    });
 }
 
 function updateChartConfiguration() {
